@@ -45,7 +45,7 @@ export default function TrustStrip() {
   return (
     <div
       ref={containerRef}
-      className="bg-brand-near-black border-y border-brand-white/10 py-5 overflow-hidden"
+      className="bg-black border-y border-zinc-800 py-5 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-nowrap md:flex-wrap items-center justify-between gap-6 md:gap-4 overflow-x-auto md:overflow-x-visible no-scrollbar select-none">

@@ -47,7 +47,7 @@ export default function CommercialPage() {
       <section className="relative pt-32 pb-20 DarkBackground-Graphite text-brand-white border-b border-brand-white/10 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <Image
-            src="/images/portals/commercial-hero.jpg"
+            src="/images/portals/commercial-hero.png"
             alt="South Florida commercial storefront glazing installation"
             fill
             sizes="100vw"
@@ -61,7 +61,7 @@ export default function CommercialPage() {
             <span className="text-label text-brand-blue font-bold tracking-widest uppercase mb-3 block">
               Trade Partner & Commercial Contractors
             </span>
-            <h1 className="text-display-xl font-bold text-brand-white leading-tight mb-6">
+            <h1 className="font-display text-display-xl font-extrabold text-brand-white leading-[1.0] mb-6 uppercase tracking-[-0.035em]">
               A Glazing and Roofing Trade Partner Who Can Execute
             </h1>
             <p className="text-body-lg text-brand-mid-gray/90 leading-relaxed mb-8">

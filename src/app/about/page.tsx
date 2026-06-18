@@ -61,7 +61,7 @@ export default function AboutPage() {
           <span className="text-label text-brand-blue font-bold tracking-widest uppercase mb-3">
             About Our Company
           </span>
-          <h1 className="text-display-xl font-bold text-brand-near-black leading-tight mb-6">
+          <h1 className="font-display text-display-xl font-extrabold text-brand-near-black leading-[1.0] mb-6 uppercase tracking-[-0.035em]">
             A South Florida Company Built on Accountability
           </h1>
           <p className="text-body-lg text-brand-graphite max-w-2xl leading-relaxed">

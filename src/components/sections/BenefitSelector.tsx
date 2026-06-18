@@ -212,8 +212,8 @@ export default function BenefitSelector() {
                   onClick={() => handleTabChange(tab.id)}
                   className={`w-full text-left p-4 rounded-lg border font-display transition-all duration-200 focus:outline-none flex items-center justify-between ${
                     isActive
-                      ? "border-l-4 border-l-brand-blue border-brand-cool-gray bg-brand-white text-brand-blue shadow-card"
-                      : "border-brand-cool-gray/50 hover:bg-brand-white/50 text-brand-near-black bg-transparent"
+                      ? "border-l-4 border-l-brand-blue border-zinc-200 bg-white text-brand-blue shadow-sm"
+                      : "border-zinc-200 hover:bg-white/50 text-zinc-800 bg-transparent"
                   }`}
                 >
                   <span className="text-heading-md font-bold">{tab.name}</span>
@@ -224,19 +224,19 @@ export default function BenefitSelector() {
           </div>
 
           {/* Right Column: Content Display Area */}
-          <div className="lg:col-span-7 bg-brand-white rounded-2xl border border-brand-cool-gray/30 shadow-card p-6 md:p-8 min-h-[380px] flex flex-col justify-between transition-all duration-200">
+          <div className="lg:col-span-7 bg-white rounded-2xl border border-zinc-200 shadow-sm p-6 md:p-8 min-h-[380px] flex flex-col justify-between transition-all duration-200">
             <div className={`transition-opacity duration-200 flex flex-col gap-4 ${isTransitioning ? "opacity-0" : "opacity-100"}`}>
               <h3 className="text-display-lg font-bold text-brand-near-black leading-tight">
                 {activeData.headline}
               </h3>
-              <p className="text-body-md text-brand-graphite leading-relaxed max-ch">
+              <p className="text-body-md text-zinc-600 leading-relaxed max-ch">
                 {activeData.copy}
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-end mt-6">
               {/* SVG Illustration Container */}
-              <div className={`md:col-span-8 aspect-[4/3] max-h-[180px] w-full border border-brand-cool-gray/20 rounded-xl bg-brand-ice/50 p-2 flex items-center justify-center transition-opacity duration-200 ${isTransitioning ? "opacity-0" : "opacity-100"}`}>
+              <div className={`md:col-span-8 aspect-[4/3] max-h-[180px] w-full border border-zinc-200/60 rounded-xl bg-zinc-50 p-2 flex items-center justify-center transition-opacity duration-200 ${isTransitioning ? "opacity-0" : "opacity-100"}`}>
                 {renderIllustration(activeData.svgType)}
               </div>
               

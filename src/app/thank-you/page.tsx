@@ -42,7 +42,7 @@ export default function ThankYouPage() {
           </svg>
         </div>
 
-        <h1 className="text-display-lg font-bold text-brand-white leading-none">
+        <h1 className="font-display text-display-lg font-extrabold text-brand-white leading-[1.0] uppercase tracking-[-0.035em]">
           We&apos;ve Got It.
         </h1>
         

@@ -9,7 +9,7 @@ import { PhoneNumber } from "../ui/PhoneNumber";
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-near-black text-brand-mid-gray pt-16 pb-24 md:pb-12 border-t border-brand-blue/50 font-sans">
+    <footer className="bg-black text-zinc-400 pt-16 pb-24 md:pb-12 border-t border-zinc-800 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         
         {/* Column 1: Brand details & Primary Action */}
@@ -25,15 +25,15 @@ export default function Footer() {
               />
             </div>
           </Link>
-          <p className="text-body-sm text-brand-mid-gray/80 leading-relaxed">
+          <p className="text-body-sm text-zinc-400 leading-relaxed">
             Impact Protection, Engineered for South Florida. We install premium impact windows, doors, and roofing systems backed by a commitment to post-installation service.
           </p>
           <div className="flex flex-col gap-3 text-body-sm">
-            <div className="flex items-center gap-2 text-brand-white font-semibold">
+            <div className="flex items-center gap-2 text-white font-semibold">
               <Phone className="w-4 h-4 text-brand-blue" />
               <PhoneNumber />
             </div>
-            <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 hover:text-brand-white transition-colors duration-200">
+            <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 hover:text-white transition-colors duration-200">
               <Mail className="w-4 h-4 text-brand-blue" />
               {siteConfig.email}
             </a>
@@ -148,7 +148,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Legal bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-brand-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm text-brand-mid-gray/60">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-zinc-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm text-zinc-500">
         <span>
           © {new Date().getFullYear()} {siteConfig.companyName}. All rights reserved. Licensed GC: {siteConfig.licenses.generalContractor} | Roofing: {siteConfig.licenses.roofing}.
         </span>

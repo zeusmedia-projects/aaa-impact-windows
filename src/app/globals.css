@@ -2,11 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    font-family: var(--font-barlow-condensed), var(--font-archivo-black), system-ui, sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+  h2, h3, h4, h5, h6 {
+    font-family: var(--font-montserrat), system-ui, sans-serif;
+    font-weight: 700;
+  }
+}
+
 :root {
   /* Brand Colors */
-  --color-blue: #3B9EE8; /* Electric Carolina blue target */
+  --color-blue: #0099CC; /* Electric Carolina blue target */
   --color-near-black: #050505;
-  --color-graphite: #171B1F;
+  --color-graphite: #000000; /* Remapped from charcoal to pure black */
   --color-white: #FFFFFF;
   --color-ice: #F7F9FB;
   --color-cool-gray: #E4E7EA;
@@ -26,7 +38,7 @@ body {
 
 /* Reusable Background Wrappers */
 .StudioBackground {
-  background: radial-gradient(circle at 50% 35%, #fafafa 0%, #f4f4f4 38%, #e8e8e8 100%);
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f9fafb 50%, #f3f4f6 100%);
 }
 
 .WhiteBackground {
@@ -34,11 +46,15 @@ body {
 }
 
 .DarkBackground-Graphite {
-  background: var(--color-graphite);
+  background: #000000;
 }
 
 .DarkBackground-Black {
-  background: var(--color-near-black);
+  background: #000000;
+}
+
+.bg-pure-black {
+  background-color: #000000;
 }
 
 /* Custom Utilities */

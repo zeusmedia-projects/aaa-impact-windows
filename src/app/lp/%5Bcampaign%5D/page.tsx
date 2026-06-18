@@ -248,7 +248,7 @@ export default function PPCLandingPage({ params }: { params: { campaign: string 
             <span className="text-label text-brand-blue font-bold tracking-widest uppercase block mb-3">
               Limited-Time Proposal Offers*
             </span>
-            <h1 className="text-display-xl font-bold text-brand-white leading-none mb-4 uppercase tracking-tight">
+            <h1 className="font-display text-display-xl font-extrabold text-brand-white leading-[1.0] mb-4 uppercase tracking-[-0.035em]">
               {config.headline}
             </h1>
             <p className="text-body-lg text-brand-mid-gray/90 leading-relaxed mb-6">

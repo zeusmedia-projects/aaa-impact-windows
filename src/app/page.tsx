@@ -2,7 +2,6 @@ import React from "react";
 import HeroSequence from "@/components/hero/HeroSequence";
 import TrustStrip from "@/components/sections/TrustStrip";
 import ServicePortalGrid from "@/components/sections/ServicePortalGrid";
-import AAADifference from "@/components/sections/AAADifference";
 import ScrollingReviews from "@/components/sections/ScrollingReviews";
 import EstimateSection from "@/components/sections/EstimateSection";
 import FeaturedProjects from "@/components/sections/FeaturedProjects";
@@ -22,13 +21,10 @@ export default function Home() {
       {/* 3. Core Service Portals */}
       <ServicePortalGrid />
 
-      {/* 4. Process & Differentiator timeline */}
-      <AAADifference />
-
-      {/* 5. Scrolling Testimonials / Reviews */}
+      {/* 4. Scrolling Testimonials / Reviews */}
       <ScrollingReviews />
 
-      {/* 6. Direct Estimate flow section */}
+      {/* 5. Build Your Estimate flow section */}
       <EstimateSection />
 
       {/* 7. Case studies & Comparison slider */}

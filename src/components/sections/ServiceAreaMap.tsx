@@ -7,16 +7,16 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function ServiceAreaMap() {
   return (
-    <section className="py-20 bg-brand-white border-b border-brand-cool-gray/30">
+    <section className="py-20 StudioBackground border-b border-brand-cool-gray/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Headline */}
         <div className="text-center mb-12 lg:mb-16">
           <span className="text-label text-brand-blue font-bold tracking-widest uppercase">Service Coverage</span>
-          <h2 className="text-display-lg font-bold text-brand-near-black mt-2">
+          <h2 className="font-montserrat text-display-lg font-bold text-brand-near-black mt-2 leading-tight">
             Where We Work
           </h2>
-          <p className="text-body-md text-brand-graphite/80 mt-3 max-ch mx-auto leading-relaxed">
+          <p className="text-body-md text-zinc-650 mt-3 max-ch mx-auto leading-relaxed">
             AAA serves homeowners and commercial clients throughout South Florida, with current residential emphasis in Naples, Davie, Pembroke Pines, Sunrise, Miramar, and surrounding communities.
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function ServiceAreaMap() {
           {/* Right Column: Office Address & Contact details */}
           <div className="lg:col-span-5 flex flex-col gap-8">
             <div className="flex flex-col gap-4">
-              <h3 className="text-display-md font-bold text-brand-near-black leading-tight">
+              <h3 className="font-montserrat text-heading-lg font-bold text-brand-near-black leading-tight">
                 Our Office & Showroom
               </h3>
               <p className="text-body-md text-brand-graphite leading-relaxed">

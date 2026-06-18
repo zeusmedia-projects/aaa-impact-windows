@@ -20,7 +20,7 @@ export default function HeroSequence() {
       />
 
       {/* Dark gradient overlay for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-near-black via-brand-near-black/70 to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent z-10 pointer-events-none" />
 
       {/* Content Container */}
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-20 pt-24 pb-16 lg:py-0">
@@ -28,8 +28,8 @@ export default function HeroSequence() {
           <span className="text-label text-brand-blue font-bold tracking-widest uppercase">
             Hurricane Readiness
           </span>
-          <h1 className="text-display-xl font-bold tracking-tight text-brand-white leading-tight">
-            Impact Protection, Engineered for South Florida.
+          <h1 className="font-display text-display-xl font-extrabold tracking-[-0.035em] text-white leading-[1.0] uppercase">
+            Impact protection, <span className="text-brand-blue">engineered for South Florida.</span>
           </h1>
           <p className="text-body-lg text-brand-white/80 max-ch leading-relaxed">
             AAA installs premium impact windows, doors, and roofing systems for South Florida properties — backed by an owner-operated team that stands behind the work long after installation.

@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
-import { Sora, Inter } from "next/font/google";
+import { Barlow_Condensed, Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileConversionBar from "@/components/layout/MobileConversionBar";
 
-const sora = Sora({
+const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-  variable: "--font-sora",
-  weight: ["600", "700", "800"],
+  variable: "--font-barlow-condensed",
+  weight: ["700", "800", "900"],
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  weight: ["600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -30,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable}`}>
+    <html lang="en" className={`${barlowCondensed.variable} ${montserrat.variable} ${inter.variable}`}>
       <body className="font-sans antialiased min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">{children}</main>

@@ -120,7 +120,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               <span className="text-label text-brand-blue font-bold tracking-widest uppercase block mb-2">
                 Project Specifications
               </span>
-              <h1 className="text-heading-lg font-bold text-brand-near-black mb-6 leading-tight">
+              <h1 className="font-display text-heading-lg font-extrabold text-brand-near-black mb-6 leading-[1.1] uppercase tracking-[-0.035em]">
                 {project.title}
               </h1>
 

@@ -76,7 +76,7 @@ export default function ResidentialPage() {
             <span className="text-label text-brand-blue font-bold tracking-widest uppercase mb-3 block">
               Homeowner Services Portal
             </span>
-            <h1 className="text-display-xl font-bold text-brand-near-black leading-tight mb-6">
+            <h1 className="font-display text-display-xl font-extrabold text-brand-near-black leading-[1.0] mb-6 uppercase tracking-[-0.035em]">
               South Florida Home Protection, Handled by People Who Care About the Work
             </h1>
             <p className="text-body-lg text-brand-graphite leading-relaxed mb-8">
@@ -92,7 +92,7 @@ export default function ResidentialPage() {
           <div className="lg:col-span-5 w-full">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-card border border-brand-cool-gray/30 bg-brand-cool-gray/20">
               <Image
-                src="/images/portals/residential-hero.jpg"
+                src="/images/portals/residential-hero.png"
                 alt="South Florida home protection"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

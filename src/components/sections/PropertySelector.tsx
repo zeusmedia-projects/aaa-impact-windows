@@ -145,13 +145,13 @@ export default function PropertySelector() {
   };
 
   return (
-    <section className="py-20 WhiteBackground border-b border-brand-cool-gray/30">
+    <section className="py-20 StudioBackground border-b border-brand-cool-gray/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Headline */}
         <div className="text-center mb-12 lg:mb-16 flex flex-col gap-3">
           <span className="text-label text-brand-blue font-bold tracking-widest uppercase">Start Your Estimate</span>
-          <h2 className="text-display-lg font-bold text-brand-near-black">
+          <h2 className="font-montserrat text-display-lg font-bold text-brand-near-black leading-tight">
             What Are We Protecting?
           </h2>
         </div>
@@ -164,10 +164,10 @@ export default function PropertySelector() {
               <button
                 key={option.id}
                 onClick={() => handleSelect(option.id)}
-                className={`group relative aspect-square p-5 rounded-xl border flex flex-col items-center justify-center gap-4 text-center focus:outline-none transition-all duration-300 ${
+                  className={`group relative aspect-square p-5 rounded-xl border flex flex-col items-center justify-center gap-4 text-center focus:outline-none transition-all duration-300 ${
                   isSelected
                     ? "border-2 border-brand-blue bg-brand-blue/5 text-brand-blue shadow-card"
-                    : "border-brand-cool-gray/70 hover:border-brand-blue/40 text-brand-near-black bg-brand-white"
+                    : "border-zinc-200 hover:border-brand-blue/40 text-zinc-800 bg-white shadow-sm hover:shadow"
                 }`}
               >
                 {/* Checkmark in top-right */}
@@ -178,12 +178,12 @@ export default function PropertySelector() {
                 )}
                 
                 {/* SVG Icon */}
-                <div className={`transition-transform duration-300 group-hover:scale-105 ${isSelected ? "text-brand-blue" : "text-brand-graphite/60 group-hover:text-brand-blue"}`}>
+                <div className={`transition-transform duration-300 group-hover:scale-105 ${isSelected ? "text-brand-blue" : "text-zinc-400 group-hover:text-brand-blue"}`}>
                   <SelectorIcon type={option.iconType} />
                 </div>
 
                 {/* Title */}
-                <span className="font-display text-body-sm font-bold tracking-tight">
+                <span className="font-montserrat text-body-sm font-bold tracking-tight">
                   {option.name}
                 </span>
               </button>
@@ -193,7 +193,7 @@ export default function PropertySelector() {
 
         {/* Dynamically changing copy & CTA section below */}
         <div className="mt-12 max-w-2xl mx-auto text-center flex flex-col items-center gap-6 animate-fade-in">
-          <p className="text-body-md text-brand-graphite font-medium leading-relaxed min-h-[48px]">
+          <p className="text-body-md text-zinc-700 font-medium leading-relaxed min-h-[48px]">
             {activeOption.copy}
           </p>
 

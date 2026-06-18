@@ -89,7 +89,7 @@ function BlueprintReveal() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-card border border-brand-white/10 bg-brand-near-black p-2"
+      className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-zinc-800 bg-zinc-950 p-2"
     >
       {/* 1. Underlying photorealistic storefront (reveals at end of scroll) */}
       <div ref={photoRef} className="absolute inset-2 z-0 opacity-0 rounded-xl overflow-hidden select-none">
@@ -105,7 +105,7 @@ function BlueprintReveal() {
       {/* 2. Blueprint drawing overlay (drawn and then dissolved) */}
       <div
         ref={blueprintOverlayRef}
-        className="absolute inset-2 z-10 bg-brand-near-black rounded-xl border border-brand-white/5 flex items-center justify-center"
+        className="absolute inset-2 z-10 bg-zinc-950 rounded-xl border border-zinc-900 flex items-center justify-center"
       >
         <svg
           className="w-full h-full p-6 text-brand-blue"
@@ -230,7 +230,7 @@ export default function CommercialSection() {
   ];
 
   return (
-    <section className="py-20 DarkBackground-Black text-brand-white border-y border-brand-white/10 overflow-hidden">
+    <section className="py-20 bg-black text-brand-white border-y border-zinc-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -240,13 +240,13 @@ export default function CommercialSection() {
               <span className="text-label text-brand-blue font-bold tracking-widest uppercase">
                 GC Partners & Commercial Properties
               </span>
-              <h2 className="text-display-xl font-bold tracking-tight text-brand-white">
-                A Trade Partner Built for Serious Projects.
+              <h2 className="font-montserrat text-display-lg font-bold tracking-tight text-brand-white leading-tight">
+                Commercial Window, Door & Storefront Projects Across South Florida
               </h2>
             </div>
             
-            <p className="text-body-md text-brand-mid-gray/80 leading-relaxed max-ch">
-              AAA works with general contractors and commercial property owners on storefront systems, plaza replacements, and commercial window and door projects across South Florida. Our reputation in this space was built through consistent execution, responsive communication, and clean jobsites.
+            <p className="text-body-md text-zinc-300 leading-relaxed max-w-2xl">
+              We partner with general contractors, architects, and commercial property owners to deliver code-compliant glazing solutions for retail plazas, storefronts, and offices. Our team coordinates directly with your project managers to align with master schedules, haul debris, and handle closeout inspections efficiently.
             </p>
 
             {/* 2x2 Callout Grid */}
@@ -254,15 +254,12 @@ export default function CommercialSection() {
               {proofPoints.map((point, index) => (
                 <div
                   key={index}
-                  className="group relative p-5 rounded-lg bg-brand-graphite border border-brand-white/5 flex flex-col gap-1.5"
+                  className="group relative p-5 rounded-xl bg-zinc-950 border border-zinc-900 flex flex-col gap-1.5 hover:border-zinc-800 transition-colors duration-300"
                 >
-                  {/* Left edge accent glow */}
-                  <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-brand-blue scale-y-0 group-hover:scale-y-100 transition-transform duration-350 origin-bottom" />
-                  
-                  <h4 className="text-heading-md font-bold text-brand-white group-hover:text-brand-blue transition-colors duration-200">
+                  <h4 className="font-montserrat text-heading-md font-bold text-brand-white group-hover:text-brand-blue transition-colors duration-200">
                     {point.title}
                   </h4>
-                  <p className="text-body-sm text-brand-mid-gray/70 leading-normal">
+                  <p className="text-body-sm text-zinc-400 leading-relaxed">
                     {point.desc}
                   </p>
                 </div>

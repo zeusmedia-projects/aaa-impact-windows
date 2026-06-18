@@ -18,7 +18,7 @@ export default function GetEstimatePage() {
           <span className="text-label text-brand-blue font-bold tracking-widest uppercase">
             Start the Conversation
           </span>
-          <h1 className="text-display-lg font-bold text-brand-near-black leading-tight">
+          <h1 className="font-display text-display-lg font-extrabold text-brand-near-black leading-[1.0] uppercase tracking-[-0.035em]">
             Get a Free Estimate.
           </h1>
           <p className="text-body-md text-brand-graphite max-w-lg">

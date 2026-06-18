@@ -21,7 +21,7 @@ export default function TermsPage() {
           <span className="text-label text-brand-blue font-bold tracking-widest uppercase block mb-2">
             Legal Terms
           </span>
-          <h1 className="text-display-lg font-bold text-brand-near-black mb-8 border-b border-brand-cool-gray/25 pb-4">
+          <h1 className="font-display text-display-lg font-extrabold text-brand-near-black mb-8 border-b border-brand-cool-gray/25 pb-4 uppercase tracking-[-0.035em] leading-[1.0]">
             Terms of Service
           </h1>
 

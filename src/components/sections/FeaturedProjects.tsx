@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { projects, ProjectCategory } from "@/data/projects";
@@ -35,7 +35,7 @@ function BeforeAfterSlider() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
-      className="relative w-full aspect-[16/10] sm:aspect-[16/9] md:min-h-[400px] rounded-2xl overflow-hidden shadow-card border border-brand-cool-gray/30 bg-brand-graphite select-none cursor-ew-resize"
+      className="relative w-full aspect-[16/10] sm:aspect-[16/9] md:min-h-[400px] rounded-2xl overflow-hidden shadow-md border border-zinc-200 bg-black select-none cursor-ew-resize"
     >
       {/* 1. Before Image (Underneath) */}
       <div className="absolute inset-0 z-0">
@@ -98,24 +98,23 @@ function BeforeAfterSlider() {
 }
 
 export default function FeaturedProjects() {
-  const [filter, setFilter] = useState<ProjectCategory | "all">("all");
+  const [filter, setFilter] = useState<string>("all");
   const [visibleProjects, setVisibleProjects] = useState(projects);
 
-  const filterOptions: { label: string; value: ProjectCategory | "all" }[] = [
-    { label: "All Work", value: "all" },
-    { label: "Impact Windows", value: "windows" },
-    { label: "Impact Doors", value: "doors" },
+  const filterOptions = [
+    { label: "All", value: "all" },
+    { label: "Windows", value: "windows" },
+    { label: "Doors", value: "doors" },
     { label: "Roofing", value: "roofing" },
     { label: "Commercial", value: "commercial" },
-    { label: "Residential", value: "residential" },
   ];
 
-  const handleFilterChange = (val: ProjectCategory | "all") => {
+  const handleFilterChange = (val: string) => {
     setFilter(val);
     if (val === "all") {
       setVisibleProjects(projects);
     } else {
-      setVisibleProjects(projects.filter((p) => p.category.includes(val)));
+      setVisibleProjects(projects.filter((p) => p.category.includes(val as ProjectCategory)));
     }
   };
 
@@ -124,15 +123,18 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section className="py-20 bg-brand-ice border-b border-brand-cool-gray/30">
+    <section className="py-20 StudioBackground border-b border-brand-cool-gray/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Headline */}
         <div className="text-center mb-10 flex flex-col items-center gap-3">
-          <span className="text-label text-brand-blue font-bold tracking-widest uppercase">Project Showcase</span>
-          <h2 className="text-display-lg font-bold text-brand-near-black">
-            The Work Speaks.
+          <span className="text-label text-brand-blue font-bold tracking-widest uppercase">Real Projects. Real Protection.</span>
+          <h2 className="font-montserrat text-display-lg font-bold text-brand-near-black">
+            See The Work Before You Decide
           </h2>
+          <p className="text-body-md text-zinc-650 mt-2 max-w-2xl text-center leading-relaxed">
+            Explore our recent storm protection and roofing installations across South Florida. From custom single-family retrofits to high-exposure commercial retail plazas, we deliver verified structural durability.
+          </p>
         </div>
 
         {/* Highlighted Before/After Slider Element */}
@@ -143,10 +145,10 @@ export default function FeaturedProjects() {
             </div>
             <div className="lg:col-span-5 flex flex-col gap-4 text-brand-near-black">
               <span className="text-label text-brand-blue font-bold tracking-widest uppercase">Case Spotlight</span>
-              <h3 className="text-display-lg font-bold tracking-tight leading-none text-brand-near-black">
+              <h3 className="font-montserrat text-display-lg font-bold tracking-tight leading-none text-brand-near-black">
                 Davie Exterior Envelope Upgrade
               </h3>
-              <p className="text-body-md text-brand-graphite leading-relaxed max-ch">
+              <p className="text-body-md text-zinc-600 leading-relaxed max-ch">
                 Compare the difference between aging, high-maintenance single-pane windows and our custom-installed heavy-duty insulated impact glass packages. AAA managed the entire Davie HOA approval and city permit coordination.
               </p>
               <div className="mt-2">
@@ -167,10 +169,10 @@ export default function FeaturedProjects() {
             <button
               key={opt.value}
               onClick={() => handleFilterChange(opt.value)}
-              className={`px-4 py-2 rounded-md text-label font-bold whitespace-nowrap transition-all duration-200 focus:outline-none ${
+              className={`px-4 py-2 rounded-full text-label font-bold whitespace-nowrap transition-all duration-200 focus:outline-none border ${
                 filter === opt.value
-                  ? "bg-brand-blue text-brand-white shadow-card"
-                  : "bg-brand-white border border-brand-cool-gray text-brand-graphite/80 hover:border-brand-blue/40"
+                  ? "bg-black border-black text-white shadow-sm"
+                  : "bg-white border-zinc-200 text-zinc-700 hover:border-zinc-300"
               }`}
             >
               {opt.label}
@@ -185,37 +187,34 @@ export default function FeaturedProjects() {
               href={`/projects/${project.slug}`}
               key={project.slug}
               onClick={() => handleCardClick(project.slug, project.category.join(","))}
-              className="group relative flex flex-col rounded-xl overflow-hidden border border-brand-cool-gray/30 bg-brand-white shadow-card hover:shadow-card-hover transition-all duration-300"
+              className="group relative flex flex-col rounded-2xl overflow-hidden border border-zinc-200 bg-white hover:border-zinc-350 shadow-sm hover:shadow-md transition-all duration-300"
             >
-              {/* Left edge glow highlight on hover */}
-              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-brand-blue scale-y-0 group-hover:scale-y-100 transition-transform duration-350 origin-bottom z-20" />
-
               {/* Image Frame */}
-              <div className="relative aspect-[16/10] overflow-hidden select-none">
+              <div className="relative aspect-[16/10] overflow-hidden select-none bg-zinc-150">
                 <Image
                   src={project.images[0] || "/images/projects/placeholder-windows.png"}
                   alt={project.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 30vw"
-                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-102"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                 />
                 
                 {/* Category Pill Tag */}
-                <div className="absolute top-3 left-3 bg-brand-blue/90 text-brand-white text-[9px] font-mono font-bold tracking-widest px-2.5 py-1 rounded-full uppercase">
+                <div className="absolute top-3 left-3 bg-black/80 text-white border border-white/10 text-[9px] font-mono font-bold tracking-widest px-2.5 py-1 rounded-full uppercase backdrop-blur-sm">
                   {project.category[0]}
                 </div>
               </div>
 
               {/* Project Card Info */}
               <div className="p-5 flex flex-col gap-2">
-                <div className="flex justify-between items-center text-[10px] font-mono font-semibold text-brand-mid-gray/70 uppercase">
+                <div className="flex justify-between items-center text-[10px] font-mono font-bold text-zinc-400 uppercase tracking-wider">
                   <span>{project.location}</span>
                   <span>{project.propertyType}</span>
                 </div>
-                <h4 className="text-heading-md font-bold text-brand-near-black group-hover:text-brand-blue transition-colors duration-200 leading-tight">
+                <h4 className="font-montserrat text-heading-md font-bold text-zinc-900 group-hover:text-brand-blue transition-colors duration-200 leading-tight">
                   {project.title}
                 </h4>
-                <p className="text-body-sm text-brand-graphite/80 leading-normal line-clamp-2 mt-1">
+                <p className="text-body-sm text-zinc-550 leading-relaxed line-clamp-2 mt-1">
                   {project.scope}
                 </p>
                 <div className="mt-4 flex items-center justify-between text-label font-bold text-brand-blue group-hover:text-brand-blue/80 transition-colors">

@@ -127,7 +127,7 @@ export default function WindowInteractiveGrid() {
           return (
             <div
               key={idx}
-              className="relative bg-brand-white p-6 rounded-2xl border border-brand-cool-gray/30 shadow-card flex flex-col justify-between h-[300px] overflow-hidden transition-all duration-500 ease-out cursor-pointer hover:shadow-card-hover group"
+              className="relative bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm flex flex-col justify-between h-[300px] overflow-hidden transition-all duration-500 ease-out cursor-pointer hover:shadow-md group"
               onMouseEnter={() => setHoveredIdx(idx)}
               onMouseLeave={() => setHoveredIdx(null)}
               onClick={() => handleOpenModal(type)}
@@ -145,8 +145,8 @@ export default function WindowInteractiveGrid() {
                   sizes="(max-width: 768px) 100vw, 30vw"
                   className="object-cover"
                 />
-                {/* Graphite Glass Tint Overlay */}
-                <div className="absolute inset-0 bg-brand-graphite/85 backdrop-blur-[1.5px]" />
+                {/* Black Glass Tint Overlay */}
+                <div className="absolute inset-0 bg-black/80 backdrop-blur-[1.5px]" />
               </div>
 
               {/* Card Content */}
@@ -154,14 +154,14 @@ export default function WindowInteractiveGrid() {
                 <div>
                   <h4
                     className={`text-heading-md font-bold leading-tight mb-2 transition-colors duration-300 ${
-                      isHovered ? "text-brand-white" : "text-brand-near-black"
+                      isHovered ? "text-white" : "text-zinc-900"
                     }`}
                   >
                     {type.name}
                   </h4>
                   <p
                     className={`text-body-sm leading-relaxed transition-colors duration-300 ${
-                      isHovered ? "text-brand-white/80" : "text-brand-graphite"
+                      isHovered ? "text-white/80" : "text-zinc-600"
                     }`}
                   >
                     {type.desc}
@@ -169,7 +169,7 @@ export default function WindowInteractiveGrid() {
                 </div>
 
                 {/* Bottom interactive label/button */}
-                <div className="mt-4 pt-4 border-t border-brand-cool-gray/20">
+                <div className="mt-4 pt-4 border-t border-zinc-100">
                   {isHovered ? (
                     <div className="w-full py-2 bg-brand-blue hover:bg-brand-blue/90 text-brand-white font-bold text-xs uppercase tracking-wider rounded-lg text-center transition-colors shadow-sm select-none">
                       Learn More
@@ -191,12 +191,12 @@ export default function WindowInteractiveGrid() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-brand-near-black/75 backdrop-blur-sm transition-opacity duration-300"
+            className="absolute inset-0 bg-black/75 backdrop-blur-sm transition-opacity duration-300"
             onClick={handleCloseModal}
           />
 
           {/* Modal Container */}
-          <div className="relative bg-brand-white border border-brand-cool-gray/30 w-full max-w-md rounded-2xl shadow-2xl p-6 md:p-8 z-10 overflow-hidden transform transition-all duration-300 scale-100 max-h-[90vh] overflow-y-auto">
+          <div className="relative bg-white border border-zinc-200 w-full max-w-md rounded-2xl shadow-2xl p-6 md:p-8 z-10 overflow-hidden transform transition-all duration-300 scale-100 max-h-[90vh] overflow-y-auto">
             {/* Close button */}
             <button
               onClick={handleCloseModal}
@@ -215,9 +215,9 @@ export default function WindowInteractiveGrid() {
                   <h3 className="text-heading-lg font-bold text-brand-near-black leading-tight">
                     Get {activeWindow.name} Pricing
                   </h3>
-                  <p className="text-body-sm text-brand-graphite mt-3 leading-relaxed">
+                  <p className="text-body-sm text-zinc-600 mt-3 leading-relaxed">
                     Let us use our competitive pricing to find the right{" "}
-                    <span className="font-semibold text-brand-near-black">
+                    <span className="font-semibold text-zinc-900">
                       {activeWindow.name.toLowerCase().replace(/\*$/, "")}
                     </span>{" "}
                     for you. Speak directly with a local specialist.
@@ -241,7 +241,7 @@ export default function WindowInteractiveGrid() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Jane Smith"
-                      className="w-full h-11 px-4 rounded-md border border-brand-cool-gray focus:outline-none focus:ring-2 focus:ring-brand-blue text-body-md bg-brand-white text-brand-near-black"
+                      className="w-full h-11 px-4 rounded-md border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-brand-blue text-body-md bg-white text-zinc-900"
                     />
                   </div>
 
@@ -255,7 +255,7 @@ export default function WindowInteractiveGrid() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="(954) 555-0199"
-                      className="w-full h-11 px-4 rounded-md border border-brand-cool-gray focus:outline-none focus:ring-2 focus:ring-brand-blue text-body-md bg-brand-white text-brand-near-black"
+                      className="w-full h-11 px-4 rounded-md border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-brand-blue text-body-md bg-white text-zinc-900"
                     />
                   </div>
 
@@ -268,7 +268,7 @@ export default function WindowInteractiveGrid() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="jane@example.com"
-                      className="w-full h-11 px-4 rounded-md border border-brand-cool-gray focus:outline-none focus:ring-2 focus:ring-brand-blue text-body-md bg-brand-white text-brand-near-black"
+                      className="w-full h-11 px-4 rounded-md border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-brand-blue text-body-md bg-white text-zinc-900"
                     />
                   </div>
 
@@ -294,13 +294,13 @@ export default function WindowInteractiveGrid() {
                 <h3 className="text-heading-lg font-bold text-brand-near-black leading-tight">
                   Thank You!
                 </h3>
-                <p className="text-body-sm text-brand-graphite max-w-xs leading-relaxed">
+                <p className="text-body-sm text-zinc-650 max-w-xs leading-relaxed">
                   We have received your request. Our local specialist will contact you shortly with competitive pricing options for your{" "}
                   <span className="font-semibold">{activeWindow.name.toLowerCase().replace(/\*$/, "")}</span>.
                 </p>
                 <button
                   onClick={handleCloseModal}
-                  className="mt-4 px-6 py-2 border border-brand-cool-gray hover:border-brand-blue hover:text-brand-blue text-brand-graphite rounded-lg text-xs font-bold transition-all cursor-pointer"
+                  className="mt-4 px-6 py-2 border border-zinc-200 hover:border-brand-blue hover:text-brand-blue text-zinc-650 rounded-lg text-xs font-bold transition-all cursor-pointer"
                 >
                   Close Window
                 </button>
