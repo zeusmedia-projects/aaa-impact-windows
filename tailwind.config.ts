@@ -40,7 +40,7 @@ const config: Config = {
       boxShadow: {
         card: "0 2px 16px rgba(7, 30, 50, 0.08)",
         "card-hover": "0 8px 32px rgba(7, 30, 50, 0.14)",
-        cta: "0 4px 20px rgba(59, 158, 232, 0.35)", // Styled to match electric Carolina blue
+        cta: "0 4px 20px rgba(0, 153, 204, 0.35)", // Styled to match electric Carolina blue
       },
     },
   },

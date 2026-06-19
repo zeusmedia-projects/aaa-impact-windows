@@ -37,7 +37,7 @@ export default function LayeredRoof() {
     {
       id: "underlayment",
       name: "2. Secondary Water Barrier",
-      color: "bg-[#3B9EE8]", // Carolina blue underlayment
+      color: "bg-brand-blue", // Carolina blue underlayment
       desc: "Self-adhering polymer sheet that seals nail holes and stops leaks.",
       offset: "-translate-y-8 md:-translate-y-12",
       delay: "150ms",

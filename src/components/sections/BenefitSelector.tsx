@@ -149,7 +149,7 @@ export default function BenefitSelector() {
             
             {/* Glass thermal barrier */}
             <line x1="180" y1="60" x2="180" y2="240" stroke="currentColor" strokeWidth="5" />
-            <line x1="190" y1="60" x2="190" y2="240" stroke="#3B9EE8" strokeWidth="2" />
+            <line x1="190" y1="60" x2="190" y2="240" stroke="#0099CC" strokeWidth="2" />
             <line x1="200" y1="60" x2="200" y2="240" stroke="currentColor" strokeWidth="5" />
             
             {/* Air conditioning coolness retention */}
