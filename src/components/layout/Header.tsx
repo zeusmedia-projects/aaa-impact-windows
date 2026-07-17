@@ -205,8 +205,8 @@ export default function Header() {
 
             {/* 3. Action Group */}
             <div className="flex items-center gap-4">
-              {/* Phone Target (Always visible) */}
-              <div className="flex items-center gap-2 text-body-sm font-semibold font-sans">
+              {/* Phone Target (Hidden on Mobile, Visible on Desktop/Tablet) */}
+              <div className="hidden md:flex items-center gap-2 text-body-sm font-semibold font-sans">
                 <Phone className={`w-4 h-4 ${isHeaderDark ? "text-brand-white" : "text-brand-blue"}`} />
                 <PhoneNumber className={isHeaderDark ? "text-brand-white" : "text-brand-near-black"} />
               </div>
