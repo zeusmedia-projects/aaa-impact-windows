@@ -29,7 +29,7 @@ export default function Header() {
 
       // 2. Check if header overlaps any dark background sections
       const darkSections = document.querySelectorAll(
-        "section.bg-brand-near-black, div.bg-brand-near-black, .DarkBackground-Graphite, .DarkBackground-Black"
+        "section.bg-brand-near-black, div.bg-brand-near-black, .DarkBackground-Graphite, .DarkBackground-Black, section.bg-black, div.bg-black, footer.DarkBackground-Black, footer.bg-black"
       );
       
       let overDark = false;
