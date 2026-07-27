@@ -225,7 +225,9 @@ export default function Header() {
               {!isDistractionFree && (
                 <button
                   onClick={() => setIsMobileMenuOpen(true)}
-                  className="lg:hidden p-2 rounded-lg hover:bg-brand-cool-gray/25 transition-colors focus:outline-none"
+                  className={`lg:hidden p-2 rounded-lg hover:bg-brand-cool-gray/25 transition-colors focus:outline-none ${
+                    isHeaderDark ? "text-brand-white" : "text-brand-near-black"
+                  }`}
                   aria-label="Open Navigation Menu"
                 >
                   <Menu className="w-6 h-6" />
