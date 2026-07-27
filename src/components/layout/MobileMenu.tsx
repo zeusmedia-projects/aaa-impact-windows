@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { X, Phone, FileText } from "lucide-react";
+import { X, Phone, FileText, ChevronDown } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
 import { PhoneNumber } from "../ui/PhoneNumber";
 
@@ -15,6 +15,7 @@ interface MobileMenuProps {
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   // Focus trap and keyboard handlers
   useEffect(() => {
@@ -40,6 +41,9 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
+
+  // Uniform, premium, responsive display text size classes (2xl in Barlow Condensed is compact and readable)
+  const linkClasses = "font-display text-2xl font-bold uppercase tracking-wider hover:text-brand-blue transition-colors py-3 border-b border-brand-white/5 flex items-center justify-between w-full text-left";
 
   return (
     <div
@@ -78,42 +82,48 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         <Link
           href="/residential"
           onClick={onClose}
-          className="font-display text-display-lg font-bold hover:text-brand-blue transition-colors py-2 border-b border-brand-white/5"
+          className={linkClasses}
         >
-          Residential
+          <span>Residential</span>
         </Link>
         <Link
           href="/commercial"
           onClick={onClose}
-          className="font-display text-display-lg font-bold hover:text-brand-blue transition-colors py-2 border-b border-brand-white/5"
+          className={linkClasses}
         >
-          Commercial
+          <span>Commercial</span>
         </Link>
         
-        {/* Services Segment */}
-        <div className="flex flex-col gap-3 py-2 border-b border-brand-white/5">
-          <span className="text-label text-brand-mid-gray/60 font-bold uppercase tracking-wider">
-            Services
-          </span>
-          <div className="pl-4 flex flex-col gap-4">
+        {/* Services Dropdown Segment */}
+        <div className="flex flex-col">
+          <button
+            onClick={() => setIsServicesOpen(!isServicesOpen)}
+            className={linkClasses}
+          >
+            <span>Services</span>
+            <ChevronDown className={`w-5 h-5 text-brand-blue transition-transform duration-250 ${isServicesOpen ? "rotate-180" : ""}`} />
+          </button>
+          
+          {/* Collapse Container */}
+          <div className={`pl-4 flex flex-col gap-4 overflow-hidden transition-all duration-300 ease-in-out ${isServicesOpen ? "max-h-48 mt-4 opacity-100" : "max-h-0 opacity-0"}`}>
             <Link
               href="/impact-windows"
               onClick={onClose}
-              className="text-heading-md font-semibold hover:text-brand-blue transition-colors"
+              className="font-montserrat text-lg font-semibold hover:text-brand-blue transition-colors py-1.5 border-l-2 border-brand-blue/30 pl-3 text-brand-mid-gray/90 hover:text-brand-blue"
             >
               Impact Windows
             </Link>
             <Link
               href="/impact-doors"
               onClick={onClose}
-              className="text-heading-md font-semibold hover:text-brand-blue transition-colors"
+              className="font-montserrat text-lg font-semibold hover:text-brand-blue transition-colors py-1.5 border-l-2 border-brand-blue/30 pl-3 text-brand-mid-gray/90 hover:text-brand-blue"
             >
               Impact Doors
             </Link>
             <Link
               href="/roofing"
               onClick={onClose}
-              className="text-heading-md font-semibold hover:text-brand-blue transition-colors"
+              className="font-montserrat text-lg font-semibold hover:text-brand-blue transition-colors py-1.5 border-l-2 border-brand-blue/30 pl-3 text-brand-mid-gray/90 hover:text-brand-blue"
             >
               Roofing
             </Link>
@@ -123,23 +133,23 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         <Link
           href="/projects"
           onClick={onClose}
-          className="font-display text-display-lg font-bold hover:text-brand-blue transition-colors py-2 border-b border-brand-white/5"
+          className={linkClasses}
         >
-          Projects
+          <span>Projects</span>
         </Link>
         <Link
           href="/about"
           onClick={onClose}
-          className="font-display text-display-lg font-bold hover:text-brand-blue transition-colors py-2 border-b border-brand-white/5"
+          className={linkClasses}
         >
-          About
+          <span>About</span>
         </Link>
         <Link
           href="/service-areas"
           onClick={onClose}
-          className="font-display text-display-lg font-bold hover:text-brand-blue transition-colors py-2 border-b border-brand-white/5"
+          className={linkClasses}
         >
-          Service Areas
+          <span>Service Areas</span>
         </Link>
       </nav>
 
