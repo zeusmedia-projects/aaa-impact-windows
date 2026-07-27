@@ -161,7 +161,7 @@ body {
   /* Fixed positioning at bottom center by default (Mobile) */
   position: fixed;
   left: 50%;
-  bottom: 80px; /* Floating 24px above the 56px sticky bottom conversion bar */
+  bottom: 66px; /* Floating 10px directly above the 56px sticky bottom conversion bar */
   top: auto;
   transform: translateX(-50%);
   margin: 0;
