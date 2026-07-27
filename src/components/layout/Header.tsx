@@ -88,12 +88,16 @@ export default function Header() {
   // Header should style as dark if it is not sticky on the homepage (transparent hero overlay) OR if it is scrolled over a dark section
   const isHeaderDark = (pathname === "/" ? !isSticky : false) || isOverDark;
 
-  // Header style classes
-  const headerClasses = (isSticky || pathname !== "/")
+  // Header style classes (always fixed/locked at top)
+  const headerClasses = isSticky
     ? isOverDark
       ? "fixed top-0 left-0 right-0 bg-brand-near-black/96 backdrop-blur-md border-b border-brand-white/10 shadow-card py-3 text-brand-white"
       : "fixed top-0 left-0 right-0 bg-brand-white/96 backdrop-blur-md border-b border-brand-cool-gray/30 shadow-card py-3 text-brand-near-black"
-    : "absolute top-0 left-0 right-0 bg-transparent py-5 text-brand-white";
+    : pathname === "/"
+    ? "fixed top-0 left-0 right-0 bg-transparent py-5 text-brand-white"
+    : isOverDark
+    ? "fixed top-0 left-0 right-0 bg-brand-near-black/96 backdrop-blur-md border-b border-brand-white/10 shadow-card py-3 text-brand-white"
+    : "fixed top-0 left-0 right-0 bg-brand-white/96 backdrop-blur-md border-b border-brand-cool-gray/30 shadow-card py-3 text-brand-near-black";
 
   const navLinkClasses = (path: string) => {
     const activeClass = isActive(path)
@@ -106,7 +110,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`z-40 transition-all duration-250 ease-in-out ${headerClasses}`}>
+      <header className={`z-50 transition-all duration-250 ease-in-out ${headerClasses}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-12">
             {/* 1. Logo */}
@@ -238,8 +242,8 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Spacer to prevent page jumping on sticky transition (only for inner pages that aren't absolute-top, home page hero is absolute top) */}
-      {(isSticky || pathname !== "/") && <div className="h-[72px]" />}
+      {/* Spacer to prevent page jumping (only for inner pages, home page hero is absolute/transparent top) */}
+      {pathname !== "/" && <div className="h-[72px]" />}
 
       {/* Mobile full-screen menu */}
       <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
