@@ -155,14 +155,20 @@ body {
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(191, 149, 63, 0.3);
   transition: transform 0.2s, box-shadow 0.2s;
-  z-index: 10;
+  z-index: 101;
   white-space: nowrap;
-  /* On mobile: flow inline next to logo */
-  margin-left: 0;
+
+  /* Fixed positioning at bottom center by default (Mobile) */
+  position: fixed;
+  left: 50%;
+  bottom: 80px; /* Floating 24px above the 56px sticky bottom conversion bar */
+  top: auto;
+  transform: translateX(-50%);
+  margin: 0;
 }
 
 .zeus-back-button:hover {
-  transform: scale(1.05);
+  transform: translateX(-50%) scale(1.05); /* maintain centering while scaling */
   box-shadow: 0 6px 18px rgba(191, 149, 63, 0.45);
   color: #1a0f00 !important;
 }
@@ -174,20 +180,10 @@ body {
   display: block;
 }
 
-/* Every view except mobile (Tablet & Desktop: min-width: 768px) */
+/* Tablet & Desktop (screens >= 768px): No sticky bottom bar, so place closer to bottom */
 @media (min-width: 768px) {
   .zeus-back-button {
-    position: fixed;
-    left: 50%;
     bottom: 24px;
-    top: auto;
-    transform: translateX(-50%);
-    margin: 0;
-    z-index: 101;
-  }
-  
-  .zeus-back-button:hover {
-    transform: translateX(-50%) scale(1.05);
   }
 }
 
