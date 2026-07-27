@@ -42,8 +42,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
   if (!isOpen) return null;
 
-  // Uniform, premium, responsive display text size classes (2xl in Barlow Condensed is compact and readable)
-  const linkClasses = "font-display text-2xl font-bold uppercase tracking-wider hover:text-brand-blue transition-colors py-3 border-b border-brand-white/5 flex items-center justify-between w-full text-left";
+  // Uniform, premium, responsive display text size classes (reduced from 2xl to lg to optimize screen space)
+  const linkClasses = "font-display text-lg font-bold uppercase tracking-wider hover:text-brand-blue transition-colors py-3 border-b border-brand-white/5 flex items-center justify-between w-full text-left";
 
   return (
     <div
@@ -109,21 +109,21 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             <Link
               href="/impact-windows"
               onClick={onClose}
-              className="font-montserrat text-lg font-semibold hover:text-brand-blue transition-colors py-1.5 border-l-2 border-brand-blue/30 pl-3 text-brand-mid-gray/90 hover:text-brand-blue"
+              className="font-montserrat text-sm font-semibold hover:text-brand-blue transition-colors py-1.5 border-l-2 border-brand-blue/30 pl-3 text-brand-mid-gray/90 hover:text-brand-blue"
             >
               Impact Windows
             </Link>
             <Link
               href="/impact-doors"
               onClick={onClose}
-              className="font-montserrat text-lg font-semibold hover:text-brand-blue transition-colors py-1.5 border-l-2 border-brand-blue/30 pl-3 text-brand-mid-gray/90 hover:text-brand-blue"
+              className="font-montserrat text-sm font-semibold hover:text-brand-blue transition-colors py-1.5 border-l-2 border-brand-blue/30 pl-3 text-brand-mid-gray/90 hover:text-brand-blue"
             >
               Impact Doors
             </Link>
             <Link
               href="/roofing"
               onClick={onClose}
-              className="font-montserrat text-lg font-semibold hover:text-brand-blue transition-colors py-1.5 border-l-2 border-brand-blue/30 pl-3 text-brand-mid-gray/90 hover:text-brand-blue"
+              className="font-montserrat text-sm font-semibold hover:text-brand-blue transition-colors py-1.5 border-l-2 border-brand-blue/30 pl-3 text-brand-mid-gray/90 hover:text-brand-blue"
             >
               Roofing
             </Link>
